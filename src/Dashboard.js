@@ -26,13 +26,6 @@ export default class Dashboard extends Component {
             filter: 0
         }
     }
-    
-    // changeSelectUser = value => {
-    //     this.setState({
-    //         selectedUser: value
-
-    //     })
-    // }
 
     changeSelectVital = value => {
         this.setState({
