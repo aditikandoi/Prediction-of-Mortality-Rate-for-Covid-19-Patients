@@ -15,6 +15,8 @@ const draw = (props) => {
         { label: 'Female', count: count[1] }
         // { label: 'Unknown', count: count[2] }
     ]
+
+    const dataAll = count[0] + count[1];
     // console.log(dataset)
 
     d3.select('.vis-piechart > *').remove();
@@ -42,6 +44,24 @@ const draw = (props) => {
         .value(function (d) { return d.count; })
         .sort(null);
 
+    var div = d3.select("body").append("div")
+        .attr("class", "tooltip-donut")
+        .style("opacity", 0);
+
+    const tooltip = d3.select("body")
+        .append("div")
+        .style("position", "absolute")
+        .style("font-family", "'Open Sans', sans-serif")
+        .style("font-size", "15px")
+        .style("z-index", "10")
+        .style("background-color", "#f2aec7")
+        .style("color", "#000000")
+        .style("border", "solid")
+        .style("border-color", "#b31e54")
+        .style("padding", "5px")
+        .style("border-radius", "2px")
+        .style("visibility", "hidden"); 
+
     svg.selectAll('path')
         .data(pie(dataset))
         .enter()
@@ -49,7 +69,43 @@ const draw = (props) => {
         .attr('d', arc)
         .attr('fill', function (d, i) {
             return color(d.data.label);
-        });
+        })
+        .attr('transform', 'translate(0, 0)')
+        .on('mouseover', function (d) {
+            tooltip.style("visibility", "visible").text(d.data.label + ": " + d.data.count);
+            console.log(d.label, d.count)
+
+            d3.select(this).transition()
+                 .duration('50')
+                 .attr('opacity', '.85');
+
+            div.transition()
+            .duration(50)
+            .style("opacity", 1);
+            
+            
+        
+        })
+        .on("mousemove", d => tooltip.style("top", (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px").text(d.data.label + ": " + (Math.round((d.data.count / dataAll) * 100)).toString() + '%'))
+
+
+        
+       .on('mouseout', function (d, i) {
+            d3.select(this).transition()
+                 .duration('50')
+                 .attr('opacity', '1');
+
+            div.transition()
+            .duration('50')
+            .style("opacity", 0);
+
+            tooltip.style("visibility", "hidden");
+            d3.select(this)
+            .attr('fill', function (d, i) {
+                return color(d.data.label);
+            })
+       })
+        
     let legendG = svg.selectAll(".legend")
         .data(pie(dataset))
         .enter().append("g")

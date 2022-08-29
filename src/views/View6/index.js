@@ -6,7 +6,7 @@ export default class View6 extends Component {
 
     selectVital = (user) => {
         this.props.changeSelectVital(user);
-        console.log(user);
+        // console.log(user);
     }
 
     render() {

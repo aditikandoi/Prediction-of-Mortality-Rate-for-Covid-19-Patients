@@ -82,12 +82,12 @@ export default class Dashboard extends Component {
             <div>                                       
                 <Layout style={{ height: 920 }}>
                     <Sider width={300} style={{backgroundColor:'#eee'}}>
-                        <Content style={{ height: 300 }}>
-                            <View1/>
-                        </Content>
-                        <Content style={{ height: 300 }}>
+                        <Content style={{ height: 150 }}>
                             <View6 changeSelectVital={this.changeSelectVital}/>
                         </Content>
+                        {/* <Content style={{ height: 300 }}>
+                            <View6 changeSelectVital={this.changeSelectVital}/>
+                        </Content> */}
                     </Sider>
                     <Layout>
                         <Content style={{ height: 300 }}>

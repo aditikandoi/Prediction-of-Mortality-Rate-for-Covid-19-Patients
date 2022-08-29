@@ -50,10 +50,10 @@ const draw = (props) => {
         .style("font-family", "'Open Sans', sans-serif")
         .style("font-size", "15px")
         .style("z-index", "10")
-        .style("background-color", "#ffb3b3")
+        .style("background-color", "#efed00")
         .style("color", "#000000")
         .style("border", "solid")
-        .style("border-color", "#660000")
+        .style("border-color", "#35544a")
         .style("padding", "5px")
         .style("border-radius", "2px")
         .style("visibility", "hidden"); 
