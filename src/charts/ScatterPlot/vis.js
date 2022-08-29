@@ -1,5 +1,4 @@
 import * as d3 from 'd3';
-// import './style.css';
 
 const draw = (props) => {
     const data = props.data;

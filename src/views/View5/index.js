@@ -9,7 +9,7 @@ export default class View5 extends Component {
             <div id='view5' className='pane'>
                 <div className='header'>Race</div>
                 <div style={{ overflowX: 'scroll',overflowY:'hidden' }}>
-                <BarChart data={data} width={1000} height={550}/>
+                <BarChart data={data} width={700} height={550}/>
                 </div>                
             </div>
         )

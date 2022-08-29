@@ -13,7 +13,7 @@ const draw = (props) => {
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    const race = ['Asian', 'White', 'Native Hawaiian or Other Pacific Islander', 'Black or African American', 'Others'];
+    const race = ['Asian', 'White', 'Pacific Islander', 'Black or African American', 'Others'];
     let count = new Array(5).fill(0);
     data.forEach(d => {
         let raceIndex = race.indexOf(d.race);
@@ -24,7 +24,7 @@ const draw = (props) => {
     const dataset = [
         { label: 'Asian', count: count[0] },
         { label: 'White', count: count[1] },
-        { label: 'Native Hawaiian or Other Pacific Islander', count: count[2] },
+        { label: 'Pacific Islander', count: count[2] },
         { label: 'Black or African American', count: count[3] },
         { label: 'Others', count: count[4] }
         // { label: 'Unknown', count: count[2] }

@@ -6,7 +6,7 @@ const plainOptions = ['Male', 'Female'];
 const defaultCheckedList = ['Male', 'Female'];
 
 const radioOption = ["Cases", "Death"]
-const raceOptions = ['Asian', 'White', 'Native Hawaiian or Other Pacific Islander', 'Black or African American', 'Others'];
+const raceOptions = ['Asian', 'White', 'Pacific Islander', 'Black or African American', 'Others'];
 const ageGroups = ['0-10', '10-18', '18-30', '30-50', '50+'];
 
 export default class View3 extends Component {
@@ -34,7 +34,8 @@ export default class View3 extends Component {
     render() {
         return (
             <div id='view3' className='pane'>
-                <div className='header'>Filter</div>
+                <div className='header'>Demographic Filter</div>
+                <br />
                 <h3>Covid Patients</h3>
                 <div style={{ width: 275, margin: 5 }}>
                     <div defaultValue={"Survivors"} onChange={this.onChangeValue}>

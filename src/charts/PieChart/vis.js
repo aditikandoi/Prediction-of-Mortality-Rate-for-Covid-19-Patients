@@ -106,28 +106,32 @@ const draw = (props) => {
             })
        })
         
-    let legendG = svg.selectAll(".legend")
-        .data(pie(dataset))
-        .enter().append("g")
-        .attr("transform", function (d, i) {
-            return "translate(" + (i * 70 - 100) + "," + 110 + ")"; 
-        })
-        .attr("class", "legend");
+    // let legendG = svg.selectAll(".legend")
+    //     .data(pie(dataset))
+    //     .enter().append("g")
+    //     .attr("transform", function (d, i) {
+    //         return "translate(" + (i * 70 - 100) + "," + 110 + ")"; 
+    //     })
+    //     .attr("class", "legend");
 
-    legendG.append("rect")
-        .attr("width", 10)
-        .attr("height", 10)
-        .attr("fill", function (d, i) {
-            return color(i);
-        });
+    // legendG.append("rect")
+    //     .attr("width", 10)
+    //     .attr("height", 10)
+    //     .attr("fill", function (d, i) {
+    //         return color(i);
+    //     });
 
-    legendG.append("text") 
-        .text(function (d) {
-            return d.data.label;
-        })
-        .style("font-size", 12)
-        .attr("y", 10)
-        .attr("x", 11);
+    // legendG.append("text") 
+    //     .text(function (d) {
+    //         return d.data.label;
+    //     })
+    //     .style("font-size", 12)
+    //     .attr("y", -350)
+    //     .attr("x", -230);
+    svg.append("circle").attr("cx",-350).attr("cy",-230).attr("r", 4).style("fill", "#BB8FCE")
+    svg.append("circle").attr("cx",-270).attr("cy",-230).attr("r", 4).style("fill", "#6C3483")
+    svg.append("text").attr("x", -340).attr("y", -230).text("Female").style("font-size", "12px").attr("alignment-baseline","middle")
+    svg.append("text").attr("x", -260).attr("y", -230).text("Male").style("font-size", "12px").attr("alignment-baseline","middle")
 }
 
 export default draw;

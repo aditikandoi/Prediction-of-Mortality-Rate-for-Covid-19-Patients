@@ -21,7 +21,7 @@ export default class Dashboard extends Component {
             selectedVital: "Lymphocytes",
             greaterThenAge: 0,
             includedGender: ['Male', 'Female'],
-            includedRace: ['Asian', 'White', 'Native Hawaiian or Other Pacific Islander', 'Black or African American', 'Others'],
+            includedRace: ['Asian', 'White', 'Pacific Islander', 'Black or African American', 'Others'],
             genderData : [],
             filter: 0
         }
@@ -82,12 +82,17 @@ export default class Dashboard extends Component {
             <div>                                       
                 <Layout style={{ height: 920 }}>
                     <Sider width={300} style={{backgroundColor:'#eee'}}>
-                        <Content style={{ height: 150 }}>
+                        <Content style={{ height: 300 }}>
                             <View6 changeSelectVital={this.changeSelectVital}/>
                         </Content>
-                        {/* <Content style={{ height: 300 }}>
-                            <View6 changeSelectVital={this.changeSelectVital}/>
-                        </Content> */}
+                        <Content style={{ height: 300 }}>
+                        <View3 
+                            setFilter={this.setFilter}
+                            changeGreaterThenAge={this.changeGreaterThenAge}
+                            changeIncludedGender={this.changeIncludedGender}
+                            changeIncludedRace={this.changeIncludedRace}       
+                        />
+                        </Content>
                     </Sider>
                     <Layout>
                         <Content style={{ height: 300 }}>
@@ -100,18 +105,18 @@ export default class Dashboard extends Component {
                                     setFilter={this.setFilter}
                                 />
                             </Content>
-                            <Sider width={300} style={{backgroundColor:'#eee'}}>
-                                <Content style={{ height: 300 }}>
+                            <Sider width={700} style={{backgroundColor:'#eee'}}>
+                                <Content style={{ height: 600 }}>
                                 <View2 data={filteredData}/>
                                 </Content>
-                                <Content style={{ height: 300 }}>
+                                {/* <Content style={{ height: 300 }}>
                                     <View3 
                                         setFilter={this.setFilter}
                                         changeGreaterThenAge={this.changeGreaterThenAge}
                                         changeIncludedGender={this.changeIncludedGender}
                                         changeIncludedRace={this.changeIncludedRace}       
                                     />
-                            </Content>
+                            </Content> */}
                             </Sider>
                         </Layout>
                     </Layout>

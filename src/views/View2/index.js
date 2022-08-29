@@ -5,8 +5,8 @@ import PieChart from '../../charts/PieChart';
 export default class View2 extends Component {
     render() {
         const {data} = this.props;
-        const width = 260;
-        const height = 260;
+        const width = 700;
+        const height = 550;
         return (
             <div id='view2' className='pane'>
                 <div className='header'>Gender</div>
