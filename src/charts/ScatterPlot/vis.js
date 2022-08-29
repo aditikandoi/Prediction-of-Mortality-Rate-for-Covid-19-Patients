@@ -44,6 +44,7 @@ const draw = (props) => {
     .domain(["Survivor", "Non-survivor" ])
     .range([ "green", "red"])
 
+
     var highlight = function(d){
 
         let selected_vital = d.survivor
@@ -64,11 +65,6 @@ const draw = (props) => {
 
     // Highlight the specie that is hovered
     var doNotHighlight = function(){
-
-        // tooltip
-        // .transition()
-        // .duration(200)
-        // .style("opacity", 0)
 
 
         d3.selectAll(".dot")
@@ -107,6 +103,11 @@ const draw = (props) => {
         .attr("x", -margin.top-50)
         .text("values");
 
+    svg.append("circle").attr("cx",30).attr("cy",10).attr("r", 4).style("fill", "green")
+    svg.append("circle").attr("cx",120).attr("cy",10).attr("r", 4).style("fill", "red")
+    svg.append("text").attr("x", 40).attr("y", 10).text("Survivors").style("font-size", "12px").attr("alignment-baseline","middle")
+    svg.append("text").attr("x", 130).attr("y", 10).text("Non-survivors").style("font-size", "12px").attr("alignment-baseline","middle")
+        
         
 }
 
